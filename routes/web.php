@@ -21,7 +21,7 @@ Route::post('logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::middleware(['auth'])->group(function () {
     // Dashboard route
     Route::get('/dashboard', [DashboardController::class, "index"])->name('dashboard');
-        // Profile route
+    // Profile route
     Route::get('/profile', [ProfileController::class, "index"])->name('profile.index');
     // Student Route
     Route::get('/students', [StudentController::class, "index"])->name('students.index');
