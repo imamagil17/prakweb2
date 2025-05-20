@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - web-2
+name: Build and deploy PHP app to Azure Web App - praktikum-web-2
 
 on:
   push:
@@ -27,9 +27,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      
+
       - name: Install npm dependencies and build frontend
-        run:
+        run: |
           npm install
           npm run build
 
@@ -74,15 +74,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C5AE13E072DC40F4822F86E58F19D6CA }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6ABB8614AAD940ED97DF164113A598A8 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4B35E87F8C2D4269AA565D9D7EF5B689 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_72DB19CC944542989D3776EA6CBC1274 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8480A54F0CE24604A6272DCCB67C1124 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_23D976F1E80F41DC9C623178818E6444 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'web-2'
+          app-name: 'praktikum-web-2'
           slot-name: 'Production'
           package: .
           
